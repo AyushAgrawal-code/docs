@@ -1,0 +1,191 @@
+
+{% extends "base.html" %}
+
+{% block title %}EchoMoments-home{% endblock title %}
+
+ {% block body %}
+
+
+      <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="echo-container">
+            <div class="hero-content">
+              <h1>Capture &amp; Share Your Event Memories</h1>
+              
+              <p class="hero-subtitle">
+                The modern way to collect, organize, and share photos from your special events using AI-powered facial recognition and QR code access.
+              </p>
+              
+              <div class="hero-buttons">
+                <button class="echo-button-primary" id ="host-event-button">
+                  <i class="fas fa-camera"></i>
+                  Host an Event
+                </button>
+                <button class="echo-button-outline"id ="join-event-button">
+                  <i class="fas fa-users"></i>
+                  Join an Event
+                </button>
+              </div>
+              
+              <!-- Decoration Elements -->
+              <div class="decoration circle-1"></div>
+              <div class="decoration circle-2"></div>
+              <div class="decoration circle-3"></div>
+            </div>
+          </div>
+          
+          <!-- Curved divider -->
+          <div class="curved-divider">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
+            </svg>
+          </div>
+        </section>
+        
+        <!-- Features Section -->
+        <section class="features-section">
+          <div class="echo-container">
+            <div class="section-header">
+              <h2>Create Lasting Memories</h2>
+              <p>EchoMoments makes it simple to collect, organize and share photos from your special events.</p>
+            </div>
+            
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-qrcode"></i>
+                </div>
+                <h3>QR Code Access</h3>
+                <p>Simply scan the event's QR code to instantly join and start sharing your photos.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-camera"></i>
+                </div>
+                <h3>AI-Powered Organization</h3>
+                <p>Our facial recognition groups photos by person, making it easy to find yourself.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3>Custom Access Controls</h3>
+                <p>Event hosts can set permissions for who can view, upload, download, or comment.</p>
+              </div>
+              
+              <div class="feature-card">
+                <div class="feature-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <h3>Professional Services</h3>
+                <p>Hire photographers and create physical albums directly through our platform.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Join Event Section -->
+        <section id="join" class="join-section">
+          <div class="echo-container">
+            <div class="section-header">
+              <h2>Join an Event</h2>
+              <p>Access a shared photo collection by scanning the event's QR code or entering an event code.</p>
+            </div>
+            
+            <div class="qr-scanner-container">
+              <div class="qr-scanner">
+                <div class="qr-scanner-header">
+                  <h3>Join an Event</h3>
+                  <p>Scan the QR code provided by the event host to access and contribute to the event's photo album.</p>
+                </div>
+                
+                <div class="qr-scanner-body">
+                  <div class="qr-placeholder">
+                    <i class="fas fa-qrcode"></i>
+                    <p>Camera access required</p>
+                    <button class="echo-button-primary" id="scanQrBtn">
+                      Scan QR Code
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="qr-scanner-footer">
+                  <p>Don't have a QR code?</p>
+                  <button class="echo-button-outline" id="enterCodeBtn">
+                    Enter Event Code
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- My Albums Section -->
+        <section id="albums" class="albums-section">
+          <div class="echo-container">
+            <div class="section-header-with-action">
+              <div>
+                <h2>My Albums</h2>
+                <p>Browse through your event collections and relive your special memories.</p>
+              </div>
+              <button class="echo-button-ghost">View All Albums</button>
+            </div>
+            
+            <div class="album-grid">
+              <!-- Album Cards will be inserted here by JavaScript -->
+            </div>
+          </div>
+        </section>
+        
+        <!-- Host an Event Section -->
+        <section id="host" class="host-section">
+          <div class="echo-container">
+            <div class="host-grid">
+              <div class="host-content">
+                <h2>Host Your Next Event</h2>
+                <p>Create a centralized album for your event where all guests can contribute their photos.
+                Set permissions, customize access, and optionally hire professional photography services.</p>
+                
+                <div class="host-buttons">
+                  <button class="echo-button-white">
+                    <i class="fas fa-image"></i>
+                    Create Event Album
+                  </button>
+                  <button class="echo-button-white-outline">
+                    <i class="fas fa-upload"></i>
+                    Upload Photos
+                  </button>
+                </div>
+              </div>
+              
+              <div class="host-images">
+                <div class="host-image-grid">
+                  <div class="host-image large-image">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding event">
+                  </div>
+                  <div class="host-image small-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Company retreat">
+                  </div>
+                  <div class="host-image small-image">
+                    <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Birthday party">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Testimonial/CTA Section -->
+        <section class="cta-section">
+          <div class="echo-container">
+            <h2>Ready to Capture Moments Together?</h2>
+            <p>Join thousands of event hosts and guests who are already using EchoMoments to create shared memories that last forever.</p>
+            <button class="echo-button-primary cta-button">Get Started Free</button>
+          </div>
+        </section>
+      </main>
+      
+{% endblock body %}

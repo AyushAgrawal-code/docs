@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}EchoMoments-login{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock extra_css %}
+
+ {% block body %}
+
+
+  <!-- Auth Container -->
+  <div class="auth-container">
+    <div class="auth-box">
+      <div class="auth-sides-container">
+        <!-- Left Side - Form -->
+        <div class="auth-form-side">
+          <div class="auth-forms-container">
+            <!-- Login Form -->
+            <div class="auth-form-panel active" id="login-panel">
+              <div class="auth-form-header">
+                <h2>Welcome Back</h2>
+                <p>Log in to continue your journey with EchoMoments</p>
+              </div>
+              <form class="auth-form" method="POST" action="">
+                {% csrf_token %}
+                     <input type="hidden" name="form_type" value="login">
+                <div class="form-group">
+                  <label for="login-email">Email</label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="login-email" name="login-email" required placeholder="Your email address">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="password-label-row">
+                    <label for="login-password">Password</label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                  </div>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-lock"></i>
+                    <input type="password" id="login-password" name="login-password" required placeholder="Your password">
+                    <button type="button" class="toggle-password">
+                      <i class="fa-regular fa-eye" ></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group remember-me">
+                  <label class="checkbox-container">
+                    <input type="checkbox" id="remember">
+                    <span class="checkmark"></span>
+                    Remember me
+                  </label>
+                </div>
+                <button type="submit" class="echo-button echo-button-primary full-width">Log In</button>
+                
+                <div class="social-auth">
+                  <div class="social-auth-divider">
+                    <span>or continue with</span>
+                  </div>
+                  <div class="social-buttons">
+                    <button type="button" class="social-button">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google">
+                      Google
+                    </button>
+                    <button type="button" class="social-button">
+                      <i class="fa-brands fa-facebook"></i>
+                      Facebook
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="auth-form-footer">
+                  <p>Don't have an account? <a href="#" class="switch-auth-mode" data-target="signup">Sign up</a></p>
+                </div>
+              </form>
+            </div>
+            
+            <!-- Signup Form -->
+            <div class="auth-form-panel" id="signup-panel">
+              <div class="auth-form-header">
+                <h2>Create Account</h2>
+                <p>Join EchoMoments to start sharing your memories</p>
+              </div>
+             <form class="auth-form" method="POST" action="">
+               {% csrf_token %}
+                    <input type="hidden" name="form_type" value="signup">
+                <div class="form-group">
+                  <label for="signup-name">Full Name</label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="signup-name" name="signup-name" required placeholder="Your full name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="signup-email">Email</label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="signup-email" name="signup-email" required placeholder="Your email address">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="signup-password">Password</label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-lock"></i>
+                    <input type="password" id="signup-password" name="signup-password" required placeholder="Create a password">
+                    <button type="button" class="toggle-password">
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
+                  <div class="password-strength">
+                    <div class="strength-bar">
+                      <div class="strength-progress" style="width: 0%"></div>
+                    </div>
+                    <span class="strength-text">Password strength</span>
+                  </div>
+                </div>
+                <div class="form-group terms">
+                  <label class="checkbox-container">
+                    <input type="checkbox" id="terms" required>
+                    <span class="checkmark"></span>
+                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                  </label>
+                </div>
+                
+                <button type="submit" class="echo-button echo-button-primary full-width">Create Account</button>
+                
+                <div class="social-auth">
+                  <div class="social-auth-divider">
+                    <span>or sign up with</span>
+                  </div>
+                  <div class="social-buttons">
+                    <button type="button" class="social-button">
+                      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google">
+                      Google
+                    </button>
+                    <button type="button" class="social-button">
+                      <i class="fa-brands fa-facebook"></i>
+                      Facebook
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="auth-form-footer">
+                  <p>Already have an account? <a href="#" class="switch-auth-mode" data-target="login">Log in</a></p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side - Image -->
+        <div class="auth-image-side">
+          <div class="auth-image-content">
+            <div class="auth-image-overlay"></div>
+            <div class="auth-image-text">
+              <div class="logo">
+                <div class="logo-icon">
+                  <i class="fa-solid fa-images"></i>
+                </div>
+                <div class="logo-text">EchoMoments</div>
+              </div>
+              <h2>Share Your Memories</h2>
+              <p>Create and explore beautiful photo collections with friends and family</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+     {% block extra_js %}
+<script src="{% static 'js/auth.js' %}" defer></script>
+{% endblock %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+
+    togglePasswordButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const input = this.parentNode.querySelector('input[type="password"], input[type="text"]');
+        const icon = this.querySelector('i');
+
+        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+        input.setAttribute('type', type);
+
+        icon.classList.toggle('fa-eye');
+        icon.classList.toggle('fa-eye-slash');
+      });
+    });
+  });
+</script>
+
+
+    {% endblock body %}
